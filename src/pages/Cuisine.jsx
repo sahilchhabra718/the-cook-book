@@ -29,7 +29,12 @@ function Cuisine() {
   }, [params.type]);
 
   return (
-    <Grid>
+    <Grid
+      animate={{opacity: 1}}
+      initial={{opacity:0}}
+      exit={{opacity: 0}}
+      transition= {{duration: 0.5}}
+    >
       {cuisine.length
         ? cuisine.map((item) => {
             return (
@@ -61,6 +66,7 @@ const Card = styled.div`
   }
   h4 {
     text-align: center;
+    text-decoration: none;
     padding: 1rem;
   }
 `;
